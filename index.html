@@ -4,166 +4,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture kingdom| Online furiture</title>
-
-
+    <title>Digital Marketing Agency</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <style>
-        /* Resetting default margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Variables */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: aqua;
+        /* Header */
+        .navbar {
+            background-color: var(--dark-color);
         }
 
-        header {
-            background-color: #9c2b2b;
-            color: #93e725;
-            padding: 20px;
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
         }
 
-        header h1 {
-            margin: 0;
+        .navbar-nav .nav-link {
+            color: var(--light-color);
         }
 
-        nav ul {
-            list-style-type: none;
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        /* Banner */
+        .banner {
+            background-image: url("https://source.unsplash.com/1600x900/?digital,marketing");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
+        .banner h1 {
+            color: var(--light-color);
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px var(--dark-color);
         }
 
-        .featured-products {
-            padding: 20px;
+        .banner p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px var(--dark-color);
         }
 
-        .featured-products h2 {
-            margin-bottom: 20px;
+        .banner .btn {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0;
         }
 
-        .product {
-            display: inline-block;
-            margin-right: 20px;
+        .banner .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
         }
 
-        .product img {
-            width: 200px;
-            height: auto;
+        /* Services */
+        .services {
+            padding: 4rem 0;
         }
 
-        .blogs {
-            padding: 20px;
-        }
-
-        .blog {
-            margin-bottom: 20px;
-        }
-
-        .blog h2 {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
+        .services h2 {
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .services .card {
+            border: none;
+            box-shadow: 0 4px 8px var(--secondary-color);
+        }
+
+        .services .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .services .card-body {
+            text-align: center;
+        }
+
+        .services .card-title {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .services .card-text {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Process */
+        .process {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .process .row {
+            align-items: center;
+        }
+
+        .process .col-md-6 {
+            padding: 2rem;
+        }
+
+        .process .video {
             width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .process .list-group-item {
+            font-size: 1.2rem;
+            border: none;
+        }
+
+        .process .list-group-item::before {
+            content: "\2713\0020";
+            color: var(--primary-color);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonials .carousel-item {
+            text-align: center;
+        }
+
+        .testimonials .img-fluid {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials .blockquote {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact .form-control {
+            border-radius: 0;
+        }
+
+        .contact .btn {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0;
+        }
+
+        .contact .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            padding: 2rem 0;
+        }
+
+        .footer .social-icons a {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .footer .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer p {
+            color: var(--light-color);
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 3rem;
+            }
+
+            .banner p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Furniture Kingdom</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Digital Marketing Agency</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#banner">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">Process</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner -->
+    <section id="banner" class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1>Track user activity on your website</h1>
+                    <p>User activity tracking is the process of monitoring, collecting, and analyzing visitor browsing
+                        behavior on a website or app.
 
-    <section class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="product">
-            <img src="pexels-pixabay-37347 (1).jpg" alt="Product 1">
-            <h3>PC Gaming Table</h3>
-            <p>$100</p>
+                        The easiest and most popular way to start tracking website users is to set up Google Analytics
+                        (we'll show you how below). But Google Analytics (GA) can be equal parts overwhelming and
+                        limited: it’s packed with options but will only show you what happens on your site, not why.</p>
+
+                    <a href="#contact" class="btn">Get a free quote</a>
+                </div>
+            </div>
         </div>
-        <div class="product">
-            <img src="pexels-eric-mufasa-1350789 (1) (1).jpg" alt="Product 2">
-            <h3>Eric Mufasa</h3>
-            <p>$150</p>
+    </section>
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/500x300/?seo" alt="SEO" class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">Way to track scroll depth</h3>
+                            Tracking scroll depth gives you this power, providing actionable insights to improve the
+                            user experience (UX) by revealing your site visitors’ scrolling behavior.
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="product">
-            <img src="pexels-pixabay-271816 (1) (1).jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>$120</p>
-        </div>
-        <div class="product">
-            <img src="pexels-vecislavas-popa-1743227 (1).jpg" alt="Product 4">
-            <h3>vecislavas popa</h3>
-            <p>$200</p>
-        </div>
-        <!-- Add more products as needed -->
     </section>
 
-    <section class="blogs">
-        <div>
-        <h2>The use of good quality wood in furniture manufacturing offers several benefits:</h2>
-        <ul>
-            <li>
-                <h3>Durability:</h3>
-                <p>High-quality wood, such as oak, maple, cherry, or mahogany, tends to be more durable and long-lasting compared to cheaper alternatives. It can withstand everyday wear and tear, making furniture pieces more resilient and able to retain their appearance and structural integrity over time.</p>
-            </li>
-            <li>
-                <h3>Aesthetic Appeal:</h3>
-                <p>Good quality wood often has attractive natural grains, colors, and textures that enhance the visual appeal of furniture. The richness and warmth of real wood can add elegance and sophistication to any space, creating a timeless and inviting atmosphere.</p>
-            </li>
-            <li>
-                <h3>Stability:</h3>
-                <p>High-quality wood is less prone to warping, cracking, or splitting, especially when properly treated and seasoned. This ensures that furniture maintains its shape and stability, even when exposed to fluctuating humidity levels or temperature changes.</p>
-            </li>
-            <li>
-                <h3>Ease of Maintenance:</h3>
-                <p>Furniture made from good quality wood is generally easier to maintain and care for. It typically requires minimal cleaning and occasional polishing to keep it looking its best, compared to other materials that may require more frequent upkeep or repairs.</p>
-            </li>
-            <li>
-                <h3>Environmental Sustainability:</h3>
-                <p>Opting for sustainably sourced and certified wood ensures that furniture production has minimal impact on the environment. Responsible forestry practices help preserve natural habitats, promote biodiversity, and support the long-term health of forests.</p>
-            </li>
-            <li>
-                <h3>Customization:</h3>
-                <p>High-quality wood offers greater flexibility for customization and craftsmanship. It can be shaped, carved, and finished to create unique designs and intricate details, allowing for personalized and bespoke furniture pieces tailored to individual preferences and needs.</p>
-            </li>
-            <li>
-                <h3>Investment Value:</h3>
-                <p>Fine quality wood furniture is often considered an investment due to its longevity and timeless appeal. Well-made pieces can appreciate in value over time, becoming cherished heirlooms passed down through generations or sought-after collectibles in the resale market.</p>
-            </li>
-        </ul>
-        <p>Overall, the use of good quality wood in furniture manufacturing contributes to superior craftsmanship, aesthetic beauty, and long-term value, making it a preferred choice for discerning consumers seeking quality and elegance in their furnishings.</p>
-    </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Furniture Kingdom</p>
-    </footer>
 </body>
 
 </html>
